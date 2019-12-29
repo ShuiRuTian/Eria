@@ -1,0 +1,48 @@
+{
+  "name": "typescipt-boilerplate",
+  "version": "1.0.0",
+  "description": "typescript boilerplate with webpack",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^13.1.1",
+    "@types/webpack": "^4.41.0",
+    "@types/webpack-merge": "^4.1.5",
+    "@typescript-eslint/eslint-plugin": "^2.13.0",
+    "@typescript-eslint/parser": "^2.13.0",
+    "cross-env": "^6.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-promise": "^4.2.1",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^6.2.1",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.4",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-merge": "^4.2.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cross-env TS_NODE_PROJECT=\"./webpack/tsconfig.json\" webpack --config ./webpack/webpack.dev.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShuiRuTian/typescipt-boilerplate.git"
+  },
+  "keywords": [
+    "typescript",
+    "boilerplate",
+    "webpack"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShuiRuTian/typescipt-boilerplate/issues"
+  },
+  "homepage": "https://github.com/ShuiRuTian/typescipt-boilerplate#readme"
+}

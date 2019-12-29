@@ -1,0 +1,12 @@
+{
+    "extends": "./tsconfig_base.json",
+    "compilerOptions": {
+        "outDir": "./dist/",
+        // "esModuleInterop":true,
+        // "noUnusedLocals": true
+    },
+    // "references": [
+    //     {
+    //     }
+    // ]
+}

@@ -1,0 +1,10 @@
+{
+    "extends": "../tsconfig_base.json",
+    "compilerOptions": {
+        "composite": true,
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "noUnusedLocals": true
+    }
+}
