@@ -47,12 +47,11 @@ const baseConfig: webpack.Configuration = {
   plugins: [],
   /** Stats options for logging  */
   // stats?: Options.Stats,
-  /** Performance options */
-  // performance?: Options.Performance | false,
-  /** Limit the number of parallel processed modules.
-   * Can be used to fine tune performance or to get more reliable profiling results */
-  // parallelism?: number,
-  /** Optimization options */
-  // optimization?: Options.Optimization,
+  optimization: {
+    splitChunks:{
+      chunks: "all",
+    }
+  },
+
 };
 export default baseConfig;
