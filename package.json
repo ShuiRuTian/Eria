@@ -28,7 +28,10 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cross-env TS_NODE_PROJECT=\"./webpack/tsconfig.json\" webpack --config ./webpack/webpack.dev.ts"
+    "build": "cross-env TS_NODE_PROJECT=\"./webpack/tsconfig.json\" webpack --config \"./webpack/webpack.dev.ts\"",
+    "buildTmp": "cross-env TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack --config webpack.dev.ts",
+    "webpackConfig": "tsc -b ./webpack/tsconfig.json",
+    "webpack": "webpack --config ./webpack/webpack.dev.js --colors --verbose --debug"
   },
   "repository": {
     "type": "git",

@@ -29,6 +29,19 @@ const baseConfig: webpack.Configuration = {
       },
     ],
   },
+  resolve: {
+    /** * A list of file extensions to try when requesting files.
+     * * An empty string is considered invalid. */
+    // For example, there are A.js, B.js and B.ts in the same folder.
+    // In A.js, I import './B',
+    // it will try to find B.tsx(not find), B.ts(find!), B.js(ignored), B.json(ignored).
+    extensions: [".tsx", ".ts", ".js", "json"],
+  },
+  /** Include polyfills or mocks for various node stuff */
+  node: {
+    // for target 'web', we don't need fs and this cause some package error when build.
+    fs: "empty",
+  },
   target: "web",
   /** Add additional plugins to the compiler. */
   plugins: [],

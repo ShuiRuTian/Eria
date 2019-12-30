@@ -2,6 +2,7 @@
     "extends": "./tsconfig_base.json",
     "compilerOptions": {
         "outDir": "./dist/",
+        // "allowSyntheticDefaultImports":true
         // "esModuleInterop":true,
         // "noUnusedLocals": true
     },

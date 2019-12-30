@@ -1,3 +1,13 @@
+## about tsconfig.json in current folder
+This file should only be used for the typescript verion of webpack config file.
+
+0. ts-node could run TypeScript fies without compiling it to plain JavaScript first.
+1. corss-env could assign environment variables for node.
+2. ts-node use environment variable TS_NODE_PROJECT as the path to TypeScript JSON project file
+So, we could use corss-env to assign process.env.TS_NODE_PROJECT as this file to let ts-node use as tsconfig.
+As for why webpack will use ts-node automatically for ts config file, I do not know.
+
+
 ## Why not put webpack config in root path?
 The main purpose is to let vscode could give error correctly.
 

@@ -9,9 +9,6 @@
     },
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "ecmaFeatures": {
-            "impliedStrict": true
-        },
         "project": "./**/tsconfig.json"
     },
     "plugins": [
