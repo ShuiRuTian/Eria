@@ -28,10 +28,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cross-env TS_NODE_PROJECT=\"./webpack/tsconfig.json\" webpack --config \"./webpack/webpack.dev.ts\"",
-    "buildTmp": "cross-env TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack --config webpack.dev.ts",
-    "webpackConfig": "tsc -b ./webpack/tsconfig.json",
-    "webpack": "webpack --config ./webpack/webpack.dev.js --colors --verbose --debug"
+    "build:dev": "cross-env TS_NODE_PROJECT=\"./webpack/tsconfig.json\" webpack --config \"./webpack/webpack.dev.ts\"",
+    "build:prod": "cross-env TS_NODE_PROJECT=\"./webpack/tsconfig.json\" webpack --config \"./webpack/webpack.prod.ts\"",
+    "lint-staged:debug": "lint-staged --debug"
   },
   "repository": {
     "type": "git",
