@@ -1,5 +1,5 @@
 {
-    "extends": "../tsconfig_base.json",
+    "extends": "../tsconfig.base.json",
     "compilerOptions": {
         "composite": true,
         "module": "commonjs",  // ts-node only support commonjs module.

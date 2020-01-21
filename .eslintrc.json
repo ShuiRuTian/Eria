@@ -9,7 +9,10 @@
     },
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "project": "./**/tsconfig.json"
+        // follow the recommandation https://github.com/typescript-eslint/typescript-eslint/issues/890.
+        // However, if it supports project refference, this should be modified immediately.
+        // this one could be use, but is too slow -- "./**/tsconfig.json"
+        "project":  "./tsconfig.eslint.json" 
     },
     "plugins": [
         "promise",
@@ -35,20 +38,6 @@
             }
         ],
         "import/extensions":0,
-        "quotes": [
-            "error",
-            "double"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ],
-        // override default options for rules from base configurations
-        "no-cond-assign": [
-            "error",
-            "always"
-        ],
-        // disable rules from base configurations
         "no-console": "off"
     }
 }

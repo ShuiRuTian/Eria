@@ -48,9 +48,9 @@ const baseConfig: webpack.Configuration = {
   /** Stats options for logging  */
   // stats?: Options.Stats,
   optimization: {
-    splitChunks:{
+    splitChunks: {
       chunks: "all",
-    }
+    },
   },
 
 };

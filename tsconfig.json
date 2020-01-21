@@ -1,5 +1,5 @@
 {
-    "extends": "./tsconfig_base.json",
+    "extends": "./tsconfig.base.json",
     "compilerOptions": {
         "outDir": "./dist/",
         // "allowSyntheticDefaultImports":true
