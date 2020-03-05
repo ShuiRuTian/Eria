@@ -27,3 +27,9 @@ Project References](https://www.typescriptlang.org/docs/handbook/project-referen
     see [webpack](./webpack/README.md)
 
 2. some function are provided by many parts, such as no-var is provided by both eslint and tsc, I recommand write it in eslint.
+
+
+## Design
+
+Download Engine
+Aria2 has done a lot of things, 

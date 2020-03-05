@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+      "sourceMap": true,
+      "module": "ESNext",
+      "moduleResolution": "Node",
+      "target": "ESNext",
+      "jsx": "react",
+      "noImplicitAny": true,
+      "experimentalDecorators": true,
+      "noImplicitReturns": true,
+      "noUnusedLocals": true,
+      "noImplicitThis": true,
+      "alwaysStrict": true,
+      "strictBindCallApply": true,
+      "strictNullChecks": true,
+      "strictPropertyInitialization": true,
+      "forceConsistentCasingInFileNames": true,
+      "allowSyntheticDefaultImports": true
+    }
+  }
+  

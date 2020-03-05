@@ -1,9 +1,9 @@
-import webpack from "webpack";
-import webpackMerge from "webpack-merge";
-import baseConfig from "./webpack.common";
+import webpack from 'webpack';
+import webpackMerge from 'webpack-merge';
+import baseConfig from './webpack.base';
 
 const devConfig: webpack.Configuration = {
-  mode: "development",
+  mode: 'production',
   optimization: {
     splitChunks: {
       name: false,
