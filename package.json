@@ -2,7 +2,7 @@
   "name": "electron-typescript-react-boilerplate",
   "version": "1.0.0",
   "description": "typescript boilerplate with webpack",
-  "main": "./dist/main.js",
+  "main": "./dist/main/main.js",
   "dependencies": {
     "@material-ui/core": "^4.9.4",
     "aria2ts": "^1.1.0",
@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@types/mini-css-extract-plugin": "^0.9.1",
-    "@types/node": "^13.7.4",
+    "@types/node": "^12.0.0",
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
     "@types/webpack": "^4.41.6",
@@ -25,6 +25,9 @@
     "@typescript-eslint/parser": "^2.20.0",
     "cross-env": "^7.0.0",
     "css-loader": "^3.4.2",
+    "electron-webpack": "^2.7.4",
+    "electron-webpack-eslint": "^5.0.1",
+    "electron-webpack-ts": "^3.2.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-airbnb-base": "^14.0.0",
@@ -48,12 +51,7 @@
     "webpack-merge": "^4.2.2"
   },
   "scripts": {
-    "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "//build:dev": "cross-env TS_NODE_PROJECT=\"./webpack/tsconfig.json\" webpack --config \"./webpack/webpack.dev.ts\"",
-    "build:devMain": "cross-env TS_NODE_PROJECT=\"./webpack/tsconfig.json\" webpack --config \"./webpack/webpack.main.dev.ts\"",
-    "//build:prod": "cross-env TS_NODE_PROJECT=\"./webpack/tsconfig.json\" webpack --config \"./webpack/webpack.prod.ts\"",
-    "lint-staged:debug": "lint-staged --debug"
+    "dev": "electron-webpack dev"
   },
   "author": "",
   "license": "ISC"

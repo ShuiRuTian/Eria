@@ -1,5 +1,4 @@
 import { app, BrowserWindow } from 'electron';
-import './index.css';
 import { format as formatUrl } from 'url';
 import path from 'path';
 
@@ -65,3 +64,7 @@ app.on('activate', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
+if (module.hot) {
+  module.hot.accept();
+}
