@@ -15,7 +15,7 @@ interface RemoveActiveTaskAction {
     gid: string;
 }
 
-type ActiveTaskChangeActions = AddActiveTaskAction | RemoveActiveTaskAction;
+export type ActiveTaskChangeActions = AddActiveTaskAction | RemoveActiveTaskAction;
 
 interface AddStoppedTaskAction {
     type: typeof STOPPED;
@@ -29,7 +29,7 @@ interface RemoveStoppedTaskAction {
     gid: string;
 }
 
-type StoppedTaskChangeActions = AddStoppedTaskAction | RemoveStoppedTaskAction;
+export type StoppedTaskChangeActions = AddStoppedTaskAction | RemoveStoppedTaskAction;
 
 interface AddWaittingTaskAction {
     type: typeof WAITING;
@@ -43,6 +43,6 @@ interface RemoveWaitingTaskAction {
     gid: string;
 }
 
-type WaittingTaskChangeActions = AddWaittingTaskAction | RemoveWaitingTaskAction;
+export type WaitingTaskChangeActions = AddWaittingTaskAction | RemoveWaitingTaskAction;
 
-export type DownloadStateChangedAction = ActiveTaskChangeActions | StoppedTaskChangeActions | WaittingTaskChangeActions
+export type DownloadStateChangedAction = ActiveTaskChangeActions | StoppedTaskChangeActions | WaitingTaskChangeActions

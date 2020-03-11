@@ -13,7 +13,7 @@
 import { applyMiddleware, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import reducer from './reducers';
+import { reducers } from './reducers';
 
 export default function configureStore(initialState) {
   const sagaMiddleware = createSagaMiddleware();
@@ -23,7 +23,7 @@ export default function configureStore(initialState) {
   const enhancers = [middlewareEnhancer];
   const composedEnhancers = composeWithDevTools(...enhancers);
   return {
-    ...createStore(reducer, initialState, composedEnhancers),
+    ...createStore(reducers, initialState, composedEnhancers),
     // eslint-disable-next-line @typescript-eslint/unbound-method
     runSaga: sagaMiddleware.run,
   };

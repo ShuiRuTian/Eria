@@ -1,22 +1,71 @@
+import { ProgramState } from './States';
+import {
+  DownloadStateChangedAction, ActiveTaskChangeActions, StoppedTaskChangeActions, WaitingTaskChangeActions,
+} from './Actions/ActionDefination';
+import { ActiveTasksState, StoppedTasksState, WaitingTasksState } from './States/DownloadTaskStates';
 
-interface Task {
-    gids: string[];
+const initialProgramState: ProgramState = {
+  activeTaskState: { gids: [] },
+  stoppedTasksState: { gids: [] },
+  waitingTasksState: { gids: [] },
+};
+
+function activeActionReducer(state: ActiveTasksState, action: ActiveTaskChangeActions): ActiveTasksState {
+  switch (action.behaviour) {
+    case 'add': {
+      const newGids = [...state.gids, action.gid];
+      return { ...state, gids: newGids };
+    }
+    case 'remove': {
+      const newGids = state.gids.filter((gid) => gid !== action.gid);
+      return { ...state, gids: newGids };
+    }
+    default: throw new Error('');
+  }
 }
 
-
-
-export interface DownloadingTasksState extends Task {
-    waste: string;
+function stoppedActionReducer(state: StoppedTasksState, action: StoppedTaskChangeActions): StoppedTasksState {
+  switch (action.behaviour) {
+    case 'add': {
+      const newGids = [...state.gids, action.gid];
+      return { ...state, gids: newGids };
+    }
+    case 'remove': {
+      const newGids = state.gids.filter((gid) => gid !== action.gid);
+      return { ...state, gids: newGids };
+    }
+    default: throw new Error('');
+  }
 }
 
-export interface WaitingTasksState extends Task {
-    waste: string;
+function waitingActionReducer(state: WaitingTasksState, action: WaitingTaskChangeActions): WaitingTasksState {
+  switch (action.behaviour) {
+    case 'add': {
+      const newGids = [...state.gids, action.gid];
+      return { ...state, gids: newGids };
+    }
+    case 'remove': {
+      const newGids = state.gids.filter((gid) => gid !== action.gid);
+      return { ...state, gids: newGids };
+    }
+    default: throw new Error('');
+  }
 }
 
-export interface StoppedTasksState extends Task {
-    waste: string;
-}
-
-export interface SuspensionWindowState {
-    isOpen: boolean;
+export function reducers(state = initialProgramState, action: DownloadStateChangedAction): ProgramState {
+  switch (action.type) {
+    case 'ACTIVE':
+      return {
+        ...state, activeTaskState: activeActionReducer(state.activeTaskState, action),
+      };
+    case 'STOPPED':
+      return {
+        ...state, stoppedTasksState: stoppedActionReducer(state.activeTaskState, action),
+      };
+    case 'WAITING':
+      return {
+        ...state, waitingTasksState: waitingActionReducer(state.activeTaskState, action),
+      };
+    default: throw new Error('');
+  }
 }
