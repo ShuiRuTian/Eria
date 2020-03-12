@@ -14,8 +14,15 @@ import { applyMiddleware, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { reducers } from './reducers';
+import { ProgramState } from './States';
 
-export default function configureStore(initialState) {
+const defaultInitialState: ProgramState = {
+  activeTaskState: { gids: [] },
+  stoppedTasksState: { gids: [] },
+  waitingTasksState: { gids: [] },
+};
+
+export function configureStore(initialState: ProgramState) {
   const sagaMiddleware = createSagaMiddleware();
   const middlewares = [sagaMiddleware];
   const middlewareEnhancer = applyMiddleware(...middlewares);
