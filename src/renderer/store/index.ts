@@ -22,7 +22,7 @@ const defaultInitialState: ProgramState = {
   waitingTasksState: { gids: [] },
 };
 
-export function configureStore(initialState: ProgramState) {
+export function configureStore(initialState = defaultInitialState) {
   const sagaMiddleware = createSagaMiddleware();
   const middlewares = [sagaMiddleware];
   const middlewareEnhancer = applyMiddleware(...middlewares);

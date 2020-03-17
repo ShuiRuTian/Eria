@@ -1,18 +1,18 @@
 import React from 'react';
 
-import Button from '@material-ui/core/Button';
-
-const App = () => (
-  <Button variant="contained" color="primary">
-    Hello World
-  </Button>
-);
+import { Button } from '@material-ui/core';
 
 interface DownloadItemProp{
-gid: string;
-
+    gid: string;
 }
 
-const DownloadItem: React.FC<DownloadItemProp> = ({}: DownloadItemProp) => {
-
+export const DownloadItem: React.FC<DownloadItemProp> = (props: DownloadItemProp) => {
+  const { gid } = props;
+  return (
+    <Button variant="contained" color="primary">
+      Hello World
+      {' '}
+      {gid}
+    </Button>
+  );
 };

@@ -12,7 +12,7 @@
         // follow the recommandation https://github.com/typescript-eslint/typescript-eslint/issues/890.
         // However, if it supports project refference, this should be modified immediately.
         // this one could be use, but is too slow -- "./**/tsconfig.json"
-        "project":  "./tsconfig.eslint.json"
+        "project": "./tsconfig.eslint.json"
     },
     "plugins": [
         "promise",
@@ -38,10 +38,11 @@
                 "devDependencies": true
             }
         ],
-        "import/extensions":0,
+        "import/extensions": 0,
         "no-console": "off",
         "react/jsx-filename-extension": "off",
         "import/prefer-default-export": "off",
-        "max-len":"off"
+        "max-len": "off",
+        "import/no-unresolved": "off"
     }
 }

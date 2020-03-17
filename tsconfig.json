@@ -4,7 +4,8 @@
         "outDir": "./dist/",
         "baseUrl": "./",
         "paths": {
-            "@components/*": ["src/render/components/*"]
+            "@components/*": ["src/renderer/components/*"],
+            "@src/*": ["src/*"]
         }
     },
     "exclude": ["./webpack"]

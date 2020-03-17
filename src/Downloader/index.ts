@@ -24,8 +24,12 @@ function getAria2RpcClient(): JsonRpcClient {
     // 2. How to restart aria2?
 
     // TODO: addeventlistener to dispatch event.
+    _aria2RpcDownloader.addEventListenerForWebSocket('open', (tmp) => console.log(tmp));
+    _aria2RpcDownloader.addEventListenerForWebSocket('message', (tmp) => console.log(tmp));
+    _aria2RpcDownloader.addEventListenerForWebSocket('error', (tmp) => console.log(tmp));
+    _aria2RpcDownloader.addEventListenerForWebSocket('close', (tmp) => console.log(tmp));
   }
-  return _aria2RpcDownloader.p;
+  return _aria2RpcDownloader;
 }
 
 export const downloader = getAria2RpcClient();
