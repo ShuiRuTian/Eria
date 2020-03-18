@@ -3,7 +3,7 @@
  * 0. start aria2 according to platform with config.
  * 1. set one static/singleton downloader
  */
-import JsonRpcClient from 'aria2ts';
+import { JsonRpcClient } from 'aria2ts';
 
 // eslint-disable-next-line no-underscore-dangle
 let _aria2RpcDownloader: JsonRpcClient|undefined;
