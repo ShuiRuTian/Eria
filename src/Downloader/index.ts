@@ -1,17 +1,26 @@
+/* eslint-disable no-underscore-dangle */
 /**
  * -1. download aria2 if not found in assiment folder. This work should be better if it belongs to installer.
  * 0. start aria2 according to platform with config.
  * 1. set one static/singleton downloader
  */
-import { JsonRpcClient } from 'aria2ts';
+import { JsonRpcClient, aria2DownloadHelper, getAria2BinName } from 'aria2ts';
+import fs from 'fs';
+import { exec } from 'shelljs';
 
-// eslint-disable-next-line no-underscore-dangle
 let _aria2RpcDownloader: JsonRpcClient|undefined;
 const isAria2Running = false;
+const _aria2BinName = getAria2BinName();
 
 function getAria2RpcClient(): JsonRpcClient {
   if (!isAria2Running) {
+    if (!fs.existsSync(_aria2BinName)) {
+      aria2DownloadHelper('./');
+      // TODO: generate config file.
+    }
     // TODO: start aria2
+    exec(`${_aria2BinName} --conf-path="./src/Downloader/aria2Config/aria2.conf"`, { async: true });
+
     throw new Error('aria2 is not running');
   }
   if (_aria2RpcDownloader === undefined) {

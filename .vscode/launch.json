@@ -7,11 +7,35 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
-            "skipFiles": [
-                "<node_internals>/**"
+            "name": "Launch and Debug",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron-webpack",
+            "runtimeArgs": [
+                "dev"
             ],
-            "program": "${workspaceFolder}/node_modules/electron/install.js"
-        }
+            "autoAttachChildProcesses": true,
+            "internalConsoleOptions": "openOnFirstSessionStart",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Current TS File",
+            "type": "node",
+            "request": "launch",
+            "args": [
+                "${relativeFile}"
+            ],
+            "runtimeArgs": [
+              "--nolazy",
+              "-r",
+              "ts-node/register"
+            ],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "protocol": "inspector",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "env": {
+                "TS_NODE_PROJECT": "${workspaceFolder}/tsconfig.node.json"
+            }
+          }
     ]
 }

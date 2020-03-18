@@ -1,0 +1,13 @@
+{
+    "extends": "./tsconfig.base.json",
+    "compilerOptions": {
+        "module": "commonjs",
+        "outDir": "./dist/",
+        "baseUrl": "./",
+        "paths": {
+            "@components/*": ["src/renderer/components/*"],
+            "@src/*": ["src/*"]
+        }
+    },
+    "exclude": ["./webpack"]
+}
