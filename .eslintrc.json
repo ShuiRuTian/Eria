@@ -29,7 +29,7 @@
         "plugin:jsx-a11y/recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
     ],
     "rules": {
         "import/no-extraneous-dependencies": [
@@ -43,6 +43,8 @@
         "react/jsx-filename-extension": "off",
         "import/prefer-default-export": "off",
         "max-len": "off",
-        "import/no-unresolved": "off"
+        "import/no-unresolved": "off",
+        // when use typescript, we do not need eslint check for us.
+        "react/prop-types":"off"
     }
 }

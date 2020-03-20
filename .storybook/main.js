@@ -16,6 +16,7 @@ module.exports = {
       ],
     });
     config.resolve.extensions.push('.ts', '.tsx','css', 'scss', 'json');
+    config.target = 'electron-renderer';
     return config;
   },
 };

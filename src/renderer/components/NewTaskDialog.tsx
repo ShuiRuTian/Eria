@@ -1,11 +1,9 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import { TextField } from '@material-ui/core';
+import {
+  DialogTitle, DialogContentText, DialogContent, DialogActions, Dialog, Button,
+  TextField,
+} from '@material-ui/core';
+
 
 /**
  * Functions:
@@ -20,17 +18,16 @@ interface NewTaskDialogProps{
     handleClose: () => void;
 }
 
-export function NewTaskDialog({ isOpen, handleClose }: NewTaskDialogProps) {
+export const NewTaskDialog: React.FC<NewTaskDialogProps> = ({ isOpen, handleClose }) => {
   // This contains an array of resources, each resource might have many uri.
   // Same resource should be in the same line.
-  let userInputDownloadString: string;
+  let userInputDownloadString = '';
   let downloadLinksArray: string[][];
 
   const handleDownloadLinksArrayChange = (userInputString: string) => {
     userInputDownloadString = userInputString;
     downloadLinksArray = userInputString.split('\n').map((links) => links.split(',').map((link) => link.trim()));
   };
-
 
   const handleCancel = () => {
     console.log('cancel clicked.');
@@ -55,7 +52,7 @@ export function NewTaskDialog({ isOpen, handleClose }: NewTaskDialogProps) {
             label="Multiline"
             multiline
             value={userInputDownloadString}
-            onChange={handleDownloadLinksArrayChange}
+            onChange={}
             variant="outlined"
           />
           <DialogContentText id="alert-dialog-description">
@@ -74,4 +71,4 @@ export function NewTaskDialog({ isOpen, handleClose }: NewTaskDialogProps) {
       </Dialog>
     </div>
   );
-}
+};

@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { downloader } from '@src/Downloader';
 import { configureStore } from './store';
 import {
-  RemoveActiveTaskAction, AddStoppedTaskAction, AddActiveTaskAction, RemoveStoppedTaskAction,
+  RemoveActiveTaskAction, AddStoppedTaskAction, AddActiveTaskAction, RemoveStoppedTaskAction, AddWaittingTaskAction,
 } from './store/Actions/Actions';
 // import { AppContainer as ReactHotAppContainer } from 'react-hot-loader';
 // import Root from './containers/Root';
@@ -27,14 +27,14 @@ downloader.notification('aria2.onDownloadError', (tmp) => {
   console.log(tmp);
   console.log('onDownloadError');
   dispatch(RemoveActiveTaskAction(tmp.gid));
-  dispatch(AddStoppedTaskAction(tmp.gid));
+  dispatch(AddWaittingTaskAction(tmp.gid));
 });
 
 downloader.notification('aria2.onDownloadPause', (tmp) => {
   console.log(tmp);
   console.log('onDownloadPause');
   dispatch(RemoveActiveTaskAction(tmp.gid));
-  dispatch(AddStoppedTaskAction(tmp.gid));
+  dispatch(AddWaittingTaskAction(tmp.gid));
 });
 
 downloader.notification('aria2.onDownloadStart', (tmp) => {

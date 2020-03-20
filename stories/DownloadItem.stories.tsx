@@ -5,7 +5,7 @@ export default {
   title: 'Welcome',
 };
 
-export const ToStorybook = () => <DownloadItem percentage={12} gid="123123" />;
+export const ToStorybook = () => <DownloadItem downloadSpeed={123} percentage={12} gid="123123" />;
 
 ToStorybook.story = {
   name: 'to Storybook',

@@ -15,6 +15,7 @@ import createSagaMiddleware from 'redux-saga';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { reducers } from './reducers';
 import { ProgramState } from './States';
+import { rootSaga } from './sagas'
 
 const defaultInitialState: ProgramState = {
   activeTaskState: { gids: [] },
